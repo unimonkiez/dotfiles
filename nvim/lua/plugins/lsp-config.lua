@@ -18,6 +18,8 @@ return {
     lazy = false,
     config = function()
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+      -- Prepare capabilities
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
@@ -25,24 +27,23 @@ return {
         cmp_nvim_lsp.default_capabilities()
       )
 
-      local lspconfig = require("lspconfig")
+      -- Define the servers you want to use
+      local servers = { "lua_ls" }
 
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities
-      })
-      lspconfig.ruby_lsp.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
+      -- Enable them using the new built-in method
+      for _, server in ipairs(servers) do
+        vim.lsp.enable(server, {
+          capabilities = capabilities,
+        })
+      end
 
+      -- Keymaps (these remain the same)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, {})
+      vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {})
     end,
   },
 }
