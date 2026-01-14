@@ -1,0 +1,61 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "ctrl+a h",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+a l",
+    "command": "composerMode.agent",
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "ctrl+a j",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+a k",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+a left",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+a right",
+    "command": "composerMode.chat",
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "ctrl+a down",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+a up",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "cmd+alt+up",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+alt+down",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  }
+]

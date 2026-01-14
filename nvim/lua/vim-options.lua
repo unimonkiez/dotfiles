@@ -5,17 +5,25 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 
 vim.opt.swapfile = false
+vim.wo.number = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
--- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.wo.number = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Using 'nowait' and 'silent' to override plugin defaults
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { silent = true, nowait = true })
+vim.keymap.set('n', '<leader>c', ':q<CR>', { silent = true, nowait = true })
+
+for i = 1, 9 do
+  vim.keymap.set('n', '<leader>' .. i, i .. 'gt', { silent = true, nowait = true })
+end
+
+vim.keymap.set('n', '<leader>l', ':tabnext<CR>', { silent = true, nowait = true })
+vim.keymap.set('n', '<leader>h', ':tabprevious<CR>', { silent = true, nowait = true })

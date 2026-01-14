@@ -1,0 +1,15 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-a h": "workspace::ActivatePaneLeft",
+      "ctrl-a l": "workspace::ActivatePaneRight",
+      "ctrl-a k": "workspace::ActivatePaneUp",
+      "ctrl-a j": "workspace::ActivatePaneDown",
+      "ctrl-a left": "workspace::ActivatePaneLeft",
+      "ctrl-a right": "workspace::ActivatePaneRight",
+      "ctrl-a up": "workspace::ActivatePaneUp",
+      "ctrl-a down": "workspace::ActivatePaneDown",
+    },
+  },
+]
