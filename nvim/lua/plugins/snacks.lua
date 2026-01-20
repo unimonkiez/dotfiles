@@ -25,7 +25,21 @@ return {
     indent = { enabled = true },
     input = { enabled = true },
     git = { enabled = true },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      win = {
+        input = {
+          keys = {
+            ["<C-n>"] = { "tab", mode = { "n", "i" } },
+          },
+        },
+        list = {
+          keys = {
+            ["<C-n>"] = "tab",
+          },
+        },
+      },
+    },
     notifier = { enabled = true },
     quickfile = { enabled = true },
     scroll = { enabled = false },
@@ -41,6 +55,6 @@ return {
     { "<leader><leader>", function() Snacks.picker.recent() end,      desc = "Recent Files" },
     { "<leader>fb",       function() Snacks.picker.buffers() end,     desc = "Buffers" },
     { "<leader>fg",       function() Snacks.picker.grep() end,        desc = "Grep Files" },
-    { "<C-n>",            function() Snacks.explorer() end,           desc = "Explorer" },
+    { "<leader>e",        function() Snacks.explorer() end,           desc = "Explorer" },
   }
 }
