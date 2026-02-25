@@ -28,3 +28,6 @@ end
 
 vim.keymap.set('n', '<leader>l', ':tabnext<CR>', { silent = true, nowait = true })
 vim.keymap.set('n', '<leader>h', ':tabprevious<CR>', { silent = true, nowait = true })
+
+-- Yank to clipboard with Y
+vim.keymap.set({'n', 'v'}, 'Y', '"+y', { silent = true })
