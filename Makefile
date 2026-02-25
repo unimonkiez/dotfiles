@@ -5,3 +5,5 @@ sym-link:
 	ln -sfv $(CURDIR)/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 	mkdir -p ~/.cursor
 	ln -sfv $(CURDIR)/.cursor/rules ~/.cursor/rules
+	ln -sfv $(CURDIR)/zsh/.zshrc ~/.zshrc
+	ln -sfv $(CURDIR)/zsh/.p10k.zsh ~/.p10k.zsh
