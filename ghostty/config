@@ -1,0 +1,34 @@
+### Dark Cyan Ghosty theme
+
+# Core colors
+background = #041018
+foreground = #d6f3ff
+cursor-color = #6fe7ff
+cursor-text = #041018
+
+selection-background = #0b2a34
+selection-foreground = #e6fbff
+
+# Slight transparency + blur (macOS supported)
+background-opacity = 0.88
+background-opacity-cells = true
+background-blur = 20
+
+# ANSI palette (dark cyan / teal biased)
+palette = 0=#050c10
+palette = 1=#ff6b7b
+palette = 2=#33d48c
+palette = 3=#6de4b8
+palette = 4=#1fa4ff
+palette = 5=#9d7fff
+palette = 6=#24d3d3
+palette = 7=#d9f4ff
+
+palette = 8=#0b1a22
+palette = 9=#ff8894
+palette = 10=#4ee5a1
+palette = 11=#8cf2cf
+palette = 12=#46baff
+palette = 13=#b89bff
+palette = 14=#47e0e0
+palette = 15=#f4fcff

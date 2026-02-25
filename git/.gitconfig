@@ -1,0 +1,12 @@
+[user]
+  name = Yuval Saraf
+  email = yuvalsaraf@gmail.com
+
+[pull]
+  rebase = true
+
+[core]
+    editor = code --wait
+
+[init]
+    defaultBranch = master
