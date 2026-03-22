@@ -32,3 +32,25 @@ palette = 12=#46baff
 palette = 13=#b89bff
 palette = 14=#47e0e0
 palette = 15=#f4fcff
+
+confirm-close-surface = false
+
+# Custom Keybindings
+keybind = super+w=close_surface
+keybind = super+t=new_tab
+
+# Move between tabs
+keybind = super+alt+left=previous_tab
+keybind = super+alt+right=next_tab
+
+# Create panes (splits) in a specific direction
+keybind = super+h=new_split:left
+keybind = super+j=new_split:down
+keybind = super+k=new_split:up
+keybind = super+l=new_split:right
+
+# Move focus between panes
+keybind = super+alt+h=goto_split:left
+keybind = super+alt+j=goto_split:down
+keybind = super+alt+k=goto_split:up
+keybind = super+alt+l=goto_split:right
