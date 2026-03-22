@@ -54,3 +54,7 @@ keybind = super+alt+h=goto_split:left
 keybind = super+alt+j=goto_split:down
 keybind = super+alt+k=goto_split:up
 keybind = super+alt+l=goto_split:right
+
+# Vim inspector
+keybind = super+alt+c=write_screen_file:paste
+keybind = super+alt+a=text:\x01nvim + \x05\r
