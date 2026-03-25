@@ -1,0 +1,161 @@
+[window]
+opacity = 0.88
+blur = true
+padding = { x = 14, y = 12 }
+decorations = "Buttonless"
+
+[colors.primary]
+background = "#041018"
+foreground = "#d6f3ff"
+
+[colors.cursor]
+text    = "#041018"
+cursor  = "#6fe7ff"
+
+[colors.selection]
+text       = "#e6fbff"
+background = "#0b2a34"
+
+[colors.normal]
+black   = "#050c10"
+red     = "#ff6b7b"
+green   = "#33d48c"
+yellow  = "#6de4b8"
+blue    = "#1fa4ff"
+magenta = "#9d7fff"
+cyan    = "#24d3d3"
+white   = "#d9f4ff"
+
+[colors.bright]
+black   = "#0b1a22"
+red     = "#ff8894"
+green   = "#4ee5a1"
+yellow  = "#8cf2cf"
+blue    = "#46baff"
+magenta = "#b89bff"
+cyan    = "#47e0e0"
+white   = "#f4fcff"
+
+# Forward every Super+* combo used by Zellij as explicit KKP sequences.
+# Without these, macOS or Alacritty intercepts them (e.g. Cmd+H = Hide,
+# Cmd+Alt+H = Hide Others, Cmd+W = CloseWindow) before Zellij sees them.
+#
+# KKP modifier encoding (bitmask + 1):
+#   Super          = 8+1  =  9
+#   Super+Shift    = 8+1+1= 10
+#   Super+Alt      = 8+2+1= 11
+#   Super+Alt+... arrow keys use ESC [ 1 ; <mod> D/C format
+
+# super+t
+[[keyboard.bindings]]
+key   = "T"
+mods  = "Super"
+chars = "\u001b[116;9u"
+
+# super+w
+[[keyboard.bindings]]
+key   = "W"
+mods  = "Super"
+chars = "\u001b[119;9u"
+
+# super+h  (new split left — also overrides macOS Cmd+H "Hide")
+[[keyboard.bindings]]
+key   = "H"
+mods  = "Super"
+chars = "\u001b[104;9u"
+
+# super+j
+[[keyboard.bindings]]
+key   = "J"
+mods  = "Super"
+chars = "\u001b[106;9u"
+
+# super+k
+[[keyboard.bindings]]
+key   = "K"
+mods  = "Super"
+chars = "\u001b[107;9u"
+
+# super+l
+[[keyboard.bindings]]
+key   = "L"
+mods  = "Super"
+chars = "\u001b[108;9u"
+
+# super+e
+[[keyboard.bindings]]
+key   = "E"
+mods  = "Super"
+chars = "\u001b[101;9u"
+
+# super+alt+left  (prev tab)
+[[keyboard.bindings]]
+key   = "Left"
+mods  = "Super|Alt"
+chars = "\u001b[1;11D"
+
+# super+alt+right  (next tab)
+[[keyboard.bindings]]
+key   = "Right"
+mods  = "Super|Alt"
+chars = "\u001b[1;11C"
+
+# super+alt+h  (focus pane left — also overrides macOS Cmd+Alt+H "Hide Others")
+[[keyboard.bindings]]
+key   = "H"
+mods  = "Super|Alt"
+chars = "\u001b[104;11u"
+
+# super+alt+j
+[[keyboard.bindings]]
+key   = "J"
+mods  = "Super|Alt"
+chars = "\u001b[106;11u"
+
+# super+alt+k
+[[keyboard.bindings]]
+key   = "K"
+mods  = "Super|Alt"
+chars = "\u001b[107;11u"
+
+# super+alt+l
+[[keyboard.bindings]]
+key   = "L"
+mods  = "Super|Alt"
+chars = "\u001b[108;11u"
+
+# super+shift+h  (resize pane left)
+[[keyboard.bindings]]
+key   = "H"
+mods  = "Super|Shift"
+chars = "\u001b[104;10u"
+
+# super+shift+j
+[[keyboard.bindings]]
+key   = "J"
+mods  = "Super|Shift"
+chars = "\u001b[106;10u"
+
+# super+shift+k
+[[keyboard.bindings]]
+key   = "K"
+mods  = "Super|Shift"
+chars = "\u001b[107;10u"
+
+# super+shift+l
+[[keyboard.bindings]]
+key   = "L"
+mods  = "Super|Shift"
+chars = "\u001b[108;10u"
+
+# super+shift+c  (scroll/copy mode)
+[[keyboard.bindings]]
+key   = "C"
+mods  = "Super|Shift"
+chars = "\u001b[99;10u"
+
+# Alt+Backspace → ESC+DEL so readline treats it as delete-word
+[[keyboard.bindings]]
+key   = "Back"
+mods  = "Alt"
+chars = "\u001b\u007f"

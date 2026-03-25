@@ -37,3 +37,9 @@ fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit
 
+
+autoload -Uz add-zsh-hook
+function _zellij_set_pane_title() {
+    print -Pn "\e]2;%~\a"
+}
+add-zsh-hook precmd _zellij_set_pane_title

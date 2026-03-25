@@ -53,6 +53,7 @@
     dir                       # current directory
     vcs                       # git status
     command_execution_time    # previous command duration
+    time
     # =========================[ Line #2 ]=========================
     newline                   # \n
     virtualenv                # python virtual environment
@@ -65,7 +66,6 @@
     # command_execution_time  # previous command duration
     # virtualenv              # python virtual environment
     # context                 # user@host
-    time                      # current time
     # =========================[ Line #2 ]=========================
     newline                   # \n
   )
