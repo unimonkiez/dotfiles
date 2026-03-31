@@ -10,6 +10,11 @@
 - Enum-First Typing: Never hardcode strings or integers when an Enum can be used.
 - Rule: If an Enum exists, it must be the key/type for any associated maps, records, or switch statements.
   Example: In TypeScript, use Record<MyEnum, ValueType>. In other languages, use the idiomatic equivalent to ensure exhaustive checking.
+- Type Inference: Never annotate the type of a variable binding when the compiler can infer it. Place type hints on the constructor or method call instead.
+  Bad:  let mut map: HashMap<String, Vec<u32>> = HashMap::new();
+  Good: let mut map = HashMap::<String, Vec<u32>>::new();
+  Bad:  let items: Vec<_> = iter.collect();
+  Good: let items = iter.collect::<Vec<_>>();
 
 3. Dependency & Import Management
 - Namespace Imports: Avoid named imports. Use the top-level module/namespace to keep the origin of a method clear.
@@ -21,3 +26,6 @@
 4. Implementation Guidelines
 - Exhaustive Handling: When working with Enums or Unions, always implement exhaustive checks (e.g., default cases that throw errors or match arms for every variant).
 - Immutable by Default: Use const, readonly, or immutable data structures unless mutation is strictly required for performance or logic.
+- Collect over Mut: Never use a mutable accumulator + push loop when an iterator + collect achieves the same result. Only introduce mut when no functional alternative exists.
+  Bad:  let mut items = Vec::new(); for x in src { items.push(f(x)); }
+  Good: let items = src.into_iter().map(f).collect::<Vec<_>>();
