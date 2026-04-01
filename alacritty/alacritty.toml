@@ -159,3 +159,8 @@ chars = "\u001b[99;10u"
 key   = "Back"
 mods  = "Alt"
 chars = "\u001b\u007f"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
