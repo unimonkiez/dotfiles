@@ -3,6 +3,7 @@
 brew:
 	brew bundle
 brew-dump:
+	rm -f $(CURDIR)/Brewfile
 	brew bundle dump --file=$(CURDIR)/Brewfile
 link:
 	mkdir -p ~/Library/Application\ Support/Cursor/User

@@ -31,3 +31,15 @@ vim.keymap.set('n', '<leader>h', ':tabprevious<CR>', { silent = true, nowait = t
 
 -- Yank to clipboard with Y
 vim.keymap.set({'n', 'v'}, 'Y', '"+y', { silent = true })
+
+-- Yank to search with S (puts yanked text in search register, doesn't jump)
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.keymap.set('x', 'S', function()
+      vim.cmd('normal! y')
+      local text = vim.fn.escape(vim.fn.getreg('"'), '/\\')
+      vim.fn.setreg('/', text)
+      vim.cmd('set hlsearch')
+    end, { silent = true, noremap = true })
+  end
+})

@@ -27,6 +27,18 @@ return {
     git = { enabled = true },
     picker = {
       enabled = true,
+      sources = {
+        files = {
+          hidden = true, -- show dotfiles (.*) in the "files" picker
+          ignored = true, -- include gitignored files too
+          exclude = { ".git" }, -- but still hide VCS internals (keep .gitignore visible)
+        },
+        explorer = {
+          hidden = true, -- show dotfiles in the explorer picker
+          ignored = true,
+          exclude = { ".git" }, -- keep .gitignore visible
+        },
+      },
       win = {
         input = {
           keys = {
