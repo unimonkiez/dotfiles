@@ -1,0 +1,7 @@
+agent/mcp.json
+agent/mcp-oauth/
+agent/auth.json
+agent/bin/
+agent/cache/
+agent/mcp-cache.json
+agent/sessions/

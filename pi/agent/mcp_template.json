@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "example": {
+      "url": "https://example.com/mcp/",
+      "auth": "oauth",
+      "directTools": true
+    }
+  }
+}
