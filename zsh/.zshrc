@@ -41,5 +41,16 @@ compinit
 autoload -Uz add-zsh-hook
 function _zellij_set_pane_title() {
     print -Pn "\e]2;%~\a"
+    if [[ -n "$ZELLIJ" ]]; then
+        command zellij action rename-tab "zsh"
+    fi
+}
+function _zellij_set_cmd_title() {
+    print -Pn "\e]2;${1%% *}\a"
+    if [[ -n "$ZELLIJ" ]]; then
+        command zellij action rename-tab "${1%% *}"
+    fi
 }
 add-zsh-hook precmd _zellij_set_pane_title
+add-zsh-hook preexec _zellij_set_cmd_title
+

@@ -19,6 +19,8 @@ keybinds clear-defaults=true {
         bind "Super Shift j" { Resize "Increase Down"; }
         bind "Super Shift k" { Resize "Increase Up"; }
         bind "Super Shift l" { Resize "Increase Right"; }
+        bind "Ctrl Shift Pageup"   { MoveTab "Left"; }
+        bind "Ctrl Shift Pagedown" { MoveTab "Right"; }
         bind "Super Shift c" { EditScrollback; }
         bind "Super 1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "Super 2" { GoToTab 2; SwitchToMode "Normal"; }

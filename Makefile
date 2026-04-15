@@ -17,3 +17,4 @@ link:
 	ln -sfv $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -sfv $(CURDIR)/claude/claude_desktop_config.json ~/Library/Application\ Support/Claude/claude_desktop_config.json
 	ln -sfv $(CURDIR)/pi ~/.pi
+	ln -sfv $(CURDIR)/claude ~/.claude
