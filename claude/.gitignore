@@ -5,3 +5,4 @@
 !.gitignore
 !skills/
 !skills/**
+skills/nvinfo-cli
