@@ -10,6 +10,26 @@
       "ctrl-a right": "workspace::ActivatePaneRight",
       "ctrl-a up": "workspace::ActivatePaneUp",
       "ctrl-a down": "workspace::ActivatePaneDown",
+      "ctrl-shift-e": "project_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-d": ["editor::MovePageDown", { "center_cursor": true }],
+      "ctrl-u": ["editor::MovePageUp", { "center_cursor": true }],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal || Editor && vim_mode == visual",
+    "bindings": {
+      "shift-y": "editor::Copy",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "shift-s": ["editor::Copy", "pane::DeploySearch"],
     },
   },
 ]

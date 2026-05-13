@@ -47,11 +47,11 @@ Run the command matching `$ARGUMENTS`. If no arguments given, ask the user which
 
 1. List all work tasks from `./Work/Tasks/`:
    ```bash
-   find ./Work/Tasks -name "*.md" ! -name "Tasks Home.md" -maxdepth 1 | sort
+   ls -d ./Work/Tasks
    ```
-2. Show each task name, its `status` and `priority` from frontmatter.
+2. Show each task name, try to figure out from pwd  which task and suggest that first (option 0), others will be numbered 1 and more.
 3. Ask the user which task they want to work on this session.
-4. Once selected, read the full task file (and any subfolder contents if the task has a directory).
+4. Once selected, read the full task file inside the folder.
 5. Read any `[[wikilinked]]` notes referenced in the task for full context.
 6. Summarize the current state: goal, open tasks, blockers, and recent notes.
 7. Remember the active task for this session (use it in `work update`).
@@ -81,10 +81,10 @@ Run the command matching `$ARGUMENTS`. If no arguments given, ask the user which
 
 ### `work status`
 
-Generate a manager-ready status update table by comparing current task state against the previous status update stored in the vault.
+Generate a manager-ready (Omer) status update table by comparing current task state against the last status update stored in the vault.
 
-1. Read the latest status update from `./Work/Status Updates.md` (the most recent `## YYYY-MM-DD` section).
-2. Scan all work task files in `./Work/Tasks/`.
+1. Read the latest status update from `./Work/Status Updates.md`.
+2. Scan all work task folders in `./Work/Tasks/`.
 3. For each task, extract `priority`, `status`, and open sub-tasks from `## Sub Tasks`.
 4. Compare current state against the previous status update to determine what changed.
 5. Present a table sorted by priority (high -> medium -> low) with columns:
@@ -94,8 +94,7 @@ Generate a manager-ready status update table by comparing current task state aga
    - **Next Sub-tasks** — the immediate open sub-tasks the user will focus on. Keep concise — use the user's own wording when they override defaults.
 6. Include all tasks, even those with no progress.
 7. If the user provides corrections to sub-tasks or progress wording, update the actual task files in the vault to match (edit `## Sub Tasks`, `last-updated` frontmatter).
-8. When the user confirms the final status update, prepend a new `## YYYY-MM-DD` section to `Status Updates.md` (above the previous one) with the finalized table.
-9. If new people are mentioned, check `./Work/People/` — if no file exists for them, create one (see People Management below).
+8. When the user confirms the final status update, override latest update in `Status Updates.md` with the finalized table.
 
 ### `personal start`
 
@@ -168,6 +167,16 @@ People referenced in tasks should have notes in `./Work/People/`.
 - When updating tasks, if new context about a person emerges (new role, new task involvement), update their people file.
 - Use `[[Full Name]]` wikilinks in task files to reference people, with an alias for first-name lookup.
 - The `Organization.md` file contains the team org chart — reference it but don't duplicate its content in people files.
+
+### Writing Style
+
+- Write everything in a plain, human way — like you'd write to a colleague, not a press release.
+- Avoid weird/unicode characters. Use plain ASCII equivalents:
+  - `x` instead of `×` (e.g., "15 runs x 3 cases", not "15 runs × 3 cases")
+  - `,` instead of `·` (e.g., "Run tests, decide, ship", not "Run tests · decide · ship")
+  - `-` instead of `—` or `–` where a regular dash works
+  - Plain quotes `"` `'` instead of curly `"` `'` `'`
+- This applies to status update tables, task notes, and anything else written into the vault or shown to the user.
 
 ### Memory Principles
 

@@ -12,10 +12,10 @@
   defaultBranch = master
 
 [diff]
-  tool = vscode
+  tool = nvimdiff
 
-[difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [merge]
   tool = vscode

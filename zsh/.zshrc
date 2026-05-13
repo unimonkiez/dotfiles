@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/ysaraf/.zsh/completions:"* ]]; then export FPATH="/Users/ysaraf/.zsh/completions:$FPATH"; fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -32,6 +34,12 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # Rust
 . "$HOME/.cargo/env"
 
+# Deno
+. "$HOME/.deno/env"
+
+# Bun
+[ -s "/Users/ysaraf/.bun/_bun" ] && source "/Users/ysaraf/.bun/_bun"
+
 eval "$(brew shellenv)"
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 autoload -U compinit
@@ -54,3 +62,4 @@ function _zellij_set_cmd_title() {
 add-zsh-hook precmd _zellij_set_pane_title
 add-zsh-hook preexec _zellij_set_cmd_title
 
+alias ll='ls -lhGa'

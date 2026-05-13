@@ -1,7 +1,8 @@
 {
-  "model": "opus[1m]",
-  "skipAutoPermissionPrompt": true,
   "permissions": {
     "defaultMode": "auto"
-  }
+  },
+  "model": "opus[1m]",
+  "skipAutoPermissionPrompt": true,
+  "effortLevel": "high"
 }
